@@ -1,11 +1,11 @@
 {
     "name": "@executeautomation/database-server",
     "version": "1.1.0",
-    "description": "MCP server for interacting with SQLite and SQL Server databases by ExecuteAutomation",
+    "description": "MCP server for interacting with MySQL, PostgreSQL, SQLite, and SQL Server databases",
     "license": "MIT",
-    "author": "ExecuteAutomation, Ltd (https://executeautomation.com)",
-    "homepage": "https://github.com/executeautomation/mcp-database-server",
-    "bugs": "https://github.com/executeautomation/database-server/issues",
+    "author": "pixel2012 (https://github.com/pixel2012)",
+    "homepage": "https://github.com/pixel2012/mcp-database-server",
+    "bugs": "https://github.com/pixel2012/mcp-database-server/issues",
     "type": "module",
     "bin": {
         "ea-database-server": "dist/src/index.js"
