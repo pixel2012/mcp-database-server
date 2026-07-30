@@ -4,7 +4,8 @@
 
 这是一个基于 [Model Context Protocol (MCP)](https://modelcontextprotocol.io) 的数据库服务器，通过 MCP 工具和资源接口让 AI 客户端（如 Claude）与多种数据库交互。
 
-- **npm 包名**: `@executeautomation/database-server`
+- **npm 包名**: `@executeautomation/database-server`（或发布为 `@pixel2012/mcp-database-server`）
+- **GitHub**: https://github.com/pixel2012/mcp-database-server
 - **入口文件**: `src/index.ts` → 编译为 `dist/src/index.js`
 - **MCP SDK**: `@modelcontextprotocol/sdk` v1.9.0
 - **许可**: MIT
