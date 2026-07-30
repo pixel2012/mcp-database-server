@@ -15,7 +15,7 @@
     ],
     "scripts": {
         "build": "tsc && shx chmod +x dist/src/index.js",
-        "prepare": "npm run build",
+        "prepare": "echo 'dist 已提交，跳过构建'",
         "watch": "tsc --watch",
         "start": "node dist/src/index.js",
         "dev": "tsc && node dist/src/index.js",
