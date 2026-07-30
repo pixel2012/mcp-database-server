@@ -13,7 +13,7 @@ export async function initDatabase(connectionInfo, dbType = 'sqlite') {
             connectionInfo = { path: connectionInfo };
         }
         // Create appropriate adapter based on database type
-        dbAdapter = createDbAdapter(dbType, connectionInfo);
+        dbAdapter = await createDbAdapter(dbType, connectionInfo);
         // Initialize the connection
         await dbAdapter.init();
     }

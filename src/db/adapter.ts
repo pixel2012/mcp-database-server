@@ -50,31 +50,34 @@ export interface DbAdapter {
   getDescribeTableQuery(tableName: string): string;
 }
 
-// Import adapters using dynamic imports
-import { SqliteAdapter } from './sqlite-adapter.js';
-import { SqlServerAdapter } from './sqlserver-adapter.js';
-import { PostgresqlAdapter } from './postgresql-adapter.js';
-import { MysqlAdapter } from './mysql-adapter.js';
-
 /**
  * Factory function to create the appropriate database adapter
+ * Uses dynamic imports to avoid loading unused native dependencies
  */
-export function createDbAdapter(type: string, connectionInfo: any): DbAdapter {
+export async function createDbAdapter(type: string, connectionInfo: any): Promise<DbAdapter> {
   switch (type.toLowerCase()) {
-    case 'sqlite':
+    case 'sqlite': {
+      const { SqliteAdapter } = await import('./sqlite-adapter.js');
       // For SQLite, if connectionInfo is a string, use it directly as path
       if (typeof connectionInfo === 'string') {
         return new SqliteAdapter(connectionInfo);
       } else {
         return new SqliteAdapter(connectionInfo.path);
       }
-    case 'sqlserver':
+    }
+    case 'sqlserver': {
+      const { SqlServerAdapter } = await import('./sqlserver-adapter.js');
       return new SqlServerAdapter(connectionInfo);
+    }
     case 'postgresql':
-    case 'postgres':
+    case 'postgres': {
+      const { PostgresqlAdapter } = await import('./postgresql-adapter.js');
       return new PostgresqlAdapter(connectionInfo);
-    case 'mysql':
+    }
+    case 'mysql': {
+      const { MysqlAdapter } = await import('./mysql-adapter.js');
       return new MysqlAdapter(connectionInfo);
+    }
     default:
       throw new Error(`Unsupported database type: ${type}`);
   }

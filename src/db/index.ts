@@ -16,7 +16,7 @@ export async function initDatabase(connectionInfo: any, dbType: string = 'sqlite
     }
 
     // Create appropriate adapter based on database type
-    dbAdapter = createDbAdapter(dbType, connectionInfo);
+    dbAdapter = await createDbAdapter(dbType, connectionInfo);
     
     // Initialize the connection
     await dbAdapter.init();
