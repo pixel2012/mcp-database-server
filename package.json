@@ -1,5 +1,5 @@
 {
-    "name": "@executeautomation/database-server",
+    "name": "@leehoo/database-server",
     "version": "1.1.0",
     "description": "MCP server for interacting with MySQL, PostgreSQL, SQLite, and SQL Server databases",
     "license": "MIT",
