@@ -1,5 +1,4 @@
 import mysql from "mysql2/promise";
-import { Signer } from "@aws-sdk/rds-signer";
 /**
  * MySQL database adapter implementation
  */
@@ -61,6 +60,7 @@ export class MysqlAdapter {
         }
         try {
             console.info(`[INFO] Generating AWS auth token for region: ${this.awsRegion}, host: ${this.host}, user: ${this.config.user}`);
+            const { Signer } = await import("@aws-sdk/rds-signer");
             const signer = new Signer({
                 region: this.awsRegion,
                 hostname: this.host,

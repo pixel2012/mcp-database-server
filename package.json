@@ -23,12 +23,14 @@
         "clean": "rimraf dist"
     },
     "dependencies": {
-        "@aws-sdk/rds-signer": "^3.0.0",
         "@modelcontextprotocol/sdk": "1.9.0",
         "mssql": "11.0.1",
         "mysql2": "^3.14.1",
         "pg": "^8.11.3",
         "sqlite3": "5.1.7"
+    },
+    "optionalDependencies": {
+        "@aws-sdk/rds-signer": "^3.0.0"
     },
     "devDependencies": {
         "@types/mssql": "^9.1.5",
